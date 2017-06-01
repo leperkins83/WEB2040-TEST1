@@ -1,0 +1,58 @@
+1. You use the SELECT verb and then specify which column(s) to select/read. To read the entire table or ALL columns use the * key. Example: SELECT * from transactions; ('transactions' being the name of the table)
+
+2. use the UPDATE verb to update changes to table, then SET to specify the column and then WHERE to specify/limit which rows/row values need to be updated. 
+
+3. UPDATE world SET language = 'English' WHERE country = 'countryx';
+
+4. Use the verb INSERT INTO to add rows to a table or to add specific value to a row.
+
+5. INSERT INTO world (country, continent, population, area, gdp, language) values ('Trumplandia', 'America', 1, 1000000, 9999999999, 'tremendous');
+
+6. Use the WHERE clause to filter results. The WHERE specifies the rows. you can also use the HAVING clause to filter or specify groups
+
+7. SELECT country from world WHERE population < 10000000;
+
+Emailed exam:
+
+1. https://modeanalytics.com/editor/lperkins/reports/420d73ae4137
+select distinct movie_title from tutorial.nominee_filmography 
+where name = 'Tom Hanks';
+
+2. https://modeanalytics.com/editor/lperkins/reports/0d830015d793
+select distinct nominee from tutorial.oscar_nominees
+where winner = true and year >= 2000;
+
+3. https://modeanalytics.com/editor/lperkins/reports/29b10fd2538d
+select nominee, count(winner) from tutorial.oscar_nominees
+ where winner = true
+ group by nominee 
+order by count(winner) desc;
+
+4. select * from investors limit 10;
+
+5. select company, count(round_type) from investors group by company order by count(round_type) desc limit 20;
+
+6. sql statement/export code used:select company, count(round_type) from investors group by company order by count(round_type) desc limit 20 into outfile 'hottestcompanies.csv' fields terminated by ',' enclosed by '"' lines terminated by '\r\n';
+copied from hottestcompanies.cvs: 
+"Blue River Technology","2"
+"AltSchool","2"
+"Gravie","2"
+"RadPad","2"
+"Boxfish","2"
+"Cloudera","2"
+"i.Sec","2"
+"Percolate","2"
+"CEGA Innovations","1"
+"OKCoin","1"
+"Alphatec Spine","1"
+"mPowa","1"
+"CAH Holdings Group","1"
+"ID.me","1"
+"Outrigger Media","1"
+"PFI Acquisition","1"
+"Maclear","1"
+"SportsBlog.com","1"
+"CueSongs","1"
+"Inbox Health","1"
+
+
